@@ -1,5 +1,7 @@
 package com.vasanth.SpringBootDemo;
 
+import com.vasanth.SpringBootDemo.model.Laptop;
+import com.vasanth.SpringBootDemo.service.LaptopService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,11 +18,14 @@ public class SpringBootDemoApplication {
 
 		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 
-//		Player obj = context.getBean(Player.class);
-//		obj.code();
+		LaptopService service = context.getBean(LaptopService.class);
+		Laptop lap = context.getBean(Laptop.class);
 
-		Player obj1 = context.getBean(Player.class);
-		obj1.code();
+		service.addLaptop(lap);
+
+//		Player obj1 = context.getBean(Player.class);
+//		System.out.println(obj1.getAge());
+//		obj1.code();
 
 
 
